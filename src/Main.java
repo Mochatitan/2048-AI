@@ -14,13 +14,13 @@ public class Main {
         //initialization stuff
 Controller cunt = new Controller();
 cunt.launchGame();
-Thread.sleep(10000);
+Thread.sleep(5000);
 
 //loops over and over and over and over and over and over and over and over and over and over and over
 for(var m = 9;m<1000;m++){
     
     
-    System.out.println(cunt.getBlocks());
+    // System.out.println(cunt.getBlocks());
     Controller.brainOfRobot();
 
 

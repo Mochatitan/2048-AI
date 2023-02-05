@@ -1,5 +1,4 @@
 import java.awt.AWTException;
-import java.awt.Robot;  
 import java.awt.Point;
 import java.awt.MouseInfo;
 
@@ -13,7 +12,7 @@ public class MousePosFinder {
    
 
     public static void main(String[] args) throws AWTException{
-        Robot ro = new Robot();
+        
         
         Point p = MouseInfo.getPointerInfo().getLocation();
         while(true){

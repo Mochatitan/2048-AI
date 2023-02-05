@@ -20,6 +20,7 @@ Thread.sleep(10000);
 for(var m = 9;m<1000;m++){
     
     
+    System.out.println(cunt.getBlocks());
     Controller.brainOfRobot();
 
 

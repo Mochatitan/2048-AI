@@ -85,7 +85,7 @@ public static void brainOfRobot() throws InterruptedException, AWTException{
             
         }
         var a = roboto.getPixelColor(950,580);
-System.out.println(a.getRed()+"   "+a.getGreen()+"    "+a.getBlue());
+// System.out.println(a.getRed()+"   "+a.getGreen()+"    "+a.getBlue());
 if(a.getRed() == 143 && a.getGreen() == 122 && a.getBlue() == 102){x=1001;}
 }
 
@@ -99,8 +99,9 @@ click(950,580);
 roboto.delay(1000);
 }
 
-public List<Integer> getBlocks(){
+public List<Integer> getBlocks() throws AWTException{
     List<Integer> blocks = new ArrayList<Integer>(16);
+    Robot john = new Robot();
     //0 = 205 193 180
     //2 = 238 228 218
     //4 = 238 225 201
@@ -121,9 +122,60 @@ public List<Integer> getBlocks(){
         //y 560
         //y 680
 
-        // for(var)
+        for(var x=0; x<4; x++){
+            for(var y=0; y<4; y++){
+                var b = john.getPixelColor(720+(x*120),320+(y*120));
+                
+                switch(b.getBlue()){
 
-   return blocks;
+                    case 180:
+                        blocks.add(0);
+                        break;
+
+                    case 218:
+                        blocks.add(2);
+                        break;
+
+                    case 201:
+                        blocks.add(4);
+                        break;
+
+                    case 122:
+                        blocks.add(8);
+                        break;
+
+                    case 100:
+                        blocks.add(16);
+                        break;
+
+                    case 95:
+                        blocks.add(32);
+                        break;
+
+                    case 59:
+                        blocks.add(64);
+                        break;
+
+                    case 115:
+                        blocks.add(128);
+                        break;
+
+                    case 98:
+                        blocks.add(256);
+                        break;
+
+                    default:
+                        blocks.add(69);
+
+                    }
+
+                }
+        }
+        
+            return blocks;
+        
+
+  
 }
 
 public void launchGame() throws IOException, URISyntaxException{
